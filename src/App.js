@@ -39,7 +39,19 @@ function App() {
     gradientPosition === 'top' ? setGradientPosition('Top') : setGradientPosition('Bottom');
     gradientType === 'linear-gradient' ? setRandomGradient(randomGradient) : setRandomGradient(randomGradient_radial);
 
-  }
+    // Set box-shadow of color-cabin
+    color_cabin.style.boxShadow = '0 0 10px 0 #000'
+    
+    // Opacity of colorTitle
+    const colorTitle = document.querySelector('.colorTitle');
+    colorTitle.style.opacity = '1';
+
+    const init_instruction0 = document.querySelector('.init_instruction0');
+    init_instruction0.style.opacity = '0';
+
+    const init_instruction1 = document.querySelector('.init_instruction1');
+    init_instruction1.style.opacity = '0';
+   }
   const notify = (param) => toast.info(param + ' copied to Clipboard', {
     position: "bottom-left",
     autoClose: 2000,
@@ -52,6 +64,9 @@ function App() {
   return (
     <>
       <div className="color_cabin">
+        <p className='colorTitle'>Generate Random Gradient</p>
+        <p className='init_instruction0'>Click the button below to create random gradient</p>
+        <p className='init_instruction1'>⏬🔽⬇️👇👇👇⬇️🔽⏬</p>
       </div>
       {/* Area to show the random values */}
       <div className="random_values">
@@ -59,59 +74,62 @@ function App() {
         <table>
           <thead>
             <tr>
-              <th colspan='2'>Details</th>
+              <th colspan='2'>Details <span className='clickToCopy'>(Click to copy)</span></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th>Random Color 1</th>
-              <td onClick={() => { 
-                navigator.clipboard.writeText(randomColor_state) 
+              <td onClick={() => {
+                navigator.clipboard.writeText(randomColor_state)
                 notify('Random Color 1')
-                }}>{randomColor_state}</td>
+              }}>{randomColor_state}</td>
             </tr>
             <tr>
               <th>Random Color 2</th>
-              <td onClick={() => { 
-                navigator.clipboard.writeText(randomColor2_state) 
+              <td onClick={() => {
+                navigator.clipboard.writeText(randomColor2_state)
                 notify('Random Color 2')
-                }}>{randomColor2_state}</td>
+              }}>{randomColor2_state}</td>
             </tr>
             <tr>
               <th>Gradient Type</th>
-              <td onClick={() => { 
-                navigator.clipboard.writeText(gradientType_state) 
+              <td onClick={() => {
+                navigator.clipboard.writeText(gradientType_state)
                 notify('Gradient Type')
-                }}>{gradientType_state}</td>
+              }}>{gradientType_state}</td>
             </tr>
             <tr>
               <th>Gradient Direction</th>
-              <td onClick={() => { 
-                navigator.clipboard.writeText(gradientDirection_state) 
+              <td onClick={() => {
+                navigator.clipboard.writeText(gradientDirection_state)
                 notify('Gradient Direction')
-                }}>{gradientDirection_state}</td>
+              }}>{gradientDirection_state}</td>
             </tr>
             <tr>
               <th>Gradient Position</th>
-              <td onClick={() => { 
-                navigator.clipboard.writeText(gradientPosition_state) 
-                notify('Gradient Position') 
-                }}>{gradientPosition_state}</td>
+              <td onClick={() => {
+                navigator.clipboard.writeText(gradientPosition_state)
+                notify('Gradient Position')
+              }}>{gradientPosition_state}</td>
             </tr>
             <tr>
               <th>Random Gradient</th>
-              <td onClick={() => { 
+              <td onClick={() => {
                 navigator.clipboard.writeText(randomGradient_state);
-                notify('Random Gradient') 
-                }}>{randomGradient_state}</td>
+                notify('Random Gradient')
+              }}>{randomGradient_state}</td>
             </tr>
           </tbody>
         </table>
+
       </div>
       <button
         onClick={() => { shuffleFunc() }}
         className="shuffle_button"
       >
+        {/* Add Icon for Shuffle */}
+        {/* <svg className="shuffle_icon" width="20" height="20" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h404c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6zm-42-324H150v200h200V64zm0 240H150v84h200v-84zM192 80h224v80H192V80z" /></svg> */}
         Generate New Gradient
       </button>
       <div className='footer'>
