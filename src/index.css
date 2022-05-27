@@ -97,10 +97,6 @@ body {
   opacity: 0;
 }
 
-.color_cabin .init_instruction1 {
-  top: 100%;
-}
-
 .color_cabin .init_instruction0 {
   top: 93%;
 }
@@ -124,10 +120,9 @@ body {
 .random_values {
   font-family: emoji;
   position: absolute;
-  left: 0;
+  left: 10px;
   right: 0;
-  margin: auto;
-  width: 100%;
+  width: 500px;
   height: 50px;
   text-align: left;
   font-size: 15px;
@@ -137,6 +132,17 @@ body {
 
 .random_values tr {
   border-bottom: 1px solid #000;
+}
+
+.random_values tbody th {
+  padding-left: 5px;
+  min-width: 150px;
+  width: 150px;
+  max-width: 150px;
+}
+
+.random_values tbody th:hover {
+  border-left: 3px solid #b4b4b4;
 }
 
 .random_values td {
