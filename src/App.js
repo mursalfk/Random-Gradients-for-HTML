@@ -41,7 +41,7 @@ function App() {
 
     // Set box-shadow of color-cabin
     color_cabin.style.boxShadow = '0 0 10px 0 #000'
-    
+
     // Opacity of colorTitle
     const colorTitle = document.querySelector('.colorTitle');
     colorTitle.style.opacity = '1';
@@ -51,7 +51,7 @@ function App() {
 
     const init_instruction1 = document.querySelector('.init_instruction1');
     init_instruction1.style.opacity = '0';
-   }
+  }
   const notify = (param) => toast.info(param + ' copied to Clipboard', {
     position: "bottom-left",
     autoClose: 2000,
@@ -63,6 +63,22 @@ function App() {
   });
   return (
     <>
+      {/* Show this component only in mobile */}
+      {window.innerWidth < 768 ? (
+        <>
+          <button
+            onClick={() => { shuffleFunc() }}
+            className="mobile_shuffle_button"
+          >
+            {/* ♻️ */}
+            {/* icon for shuffle */}
+            <svg className="mobile_shuffle_icon" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z" />
+            </svg>
+          </button>
+        </>
+      ) : (<></>)}
       <div className="color_cabin">
         <p className='colorTitle'>Generate Random Gradient</p>
         <p className='init_instruction0'>Click the button below to create random gradient</p>
@@ -124,14 +140,17 @@ function App() {
         </table>
 
       </div>
-      <button
-        onClick={() => { shuffleFunc() }}
-        className="shuffle_button"
-      >
-        {/* Add Icon for Shuffle */}
-        {/* <svg className="shuffle_icon" width="20" height="20" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h404c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6zm-42-324H150v200h200V64zm0 240H150v84h200v-84zM192 80h224v80H192V80z" /></svg> */}
-        Generate New Gradient
-      </button>
+      {window.innerWidth >= 768 ? (
+
+        <button
+          onClick={() => { shuffleFunc() }}
+          className="shuffle_button"
+        >
+          {/* Add Icon for Shuffle */}
+          {/* <svg className="shuffle_icon" width="20" height="20" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h404c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6zm-42-324H150v200h200V64zm0 240H150v84h200v-84zM192 80h224v80H192V80z" /></svg> */}
+          Generate New Gradient
+        </button>
+      ) : (<></>)}
       <div className='footer'>
         Created with ❤️ by <a href='https://mursalfk.github.io/' target='_blank' rel='noopener noreferrer'>Mursal Furqan</a>
       </div>
