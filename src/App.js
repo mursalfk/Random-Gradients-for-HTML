@@ -49,8 +49,8 @@ function App() {
     const init_instruction0 = document.querySelector('.init_instruction0');
     init_instruction0.style.opacity = '0';
 
-    const init_instruction1 = document.querySelector('.init_instruction1');
-    init_instruction1.style.opacity = '0';
+    // const init_instruction1 = document.querySelector('.init_instruction1');
+    // init_instruction1.style.opacity = '0';
   }
   const notify = (param) => toast.info(param + ' copied to Clipboard', {
     position: "bottom-left",
@@ -81,8 +81,10 @@ function App() {
       ) : (<></>)} */}
       <div className="color_cabin">
         <p className='colorTitle'>Generate Random Gradient</p>
-        <p className='init_instruction0'>Click the button below to create random gradient</p>
-        <p className='init_instruction1'>⏬🔽⬇️👇👇👇⬇️🔽⏬</p>
+        <p className='init_instruction0'>
+          Click the button below to create random gradient
+          <br />⏬🔽⬇️👇👇👇⬇️🔽⏬
+        </p>
       </div>
       {/* Area to show the random values */}
       <div className="random_values">
@@ -90,7 +92,7 @@ function App() {
         <table>
           <thead>
             <tr>
-              <th colspan='2'>Details <span className='clickToCopy'>(Click to copy)</span></th>
+              <th colSpan='2'>Details <span className='clickToCopy'>(Click to copy)</span></th>
             </tr>
           </thead>
           <tbody>
