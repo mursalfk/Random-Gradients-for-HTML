@@ -1,5 +1,5 @@
 body{
-    background-color: #f5f5f5;
+    background-color: #d9d7e1;
     font-family: emoji;
 }
 
@@ -12,7 +12,7 @@ body{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #d9d7e1;
     border: none;
     transition: all 0.5s;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.351);
@@ -20,7 +20,7 @@ body{
     &:active{
         background-color: #000;
         svg{
-            fill: #f5f5f5;
+            fill: #d9d7e1;
         }
     }
     
@@ -42,12 +42,12 @@ body{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    color: #f5f5f5;
+    color: #d9d7e1;
     cursor: pointer;
     transition: all 0.5s ease;
 
     &:hover{
-        background: #f5f5f5;
+        background: #d9d7e1;
         border-top: 1px solid #000; 
         color: #000;
     }
@@ -68,7 +68,7 @@ body{
     max-width: 75%;
     height: 350px;
     border-radius: 5px;
-    background: #f5f5f5;
+    background: #d9d7e1;
     transition: all 0.5s ease;
     cursor: not-allowed;    
 
