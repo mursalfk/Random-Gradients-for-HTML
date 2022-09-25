@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 function App() {
+  const portfolio = 'https://mursalfk.com';
   const [randomColor_state, setRandomColor] = useState('N/A');
   const [randomColor2_state, setRandomColor2] = useState('N/A');
   const [gradientType_state, setGradientType] = useState('N/A');
@@ -132,7 +133,7 @@ function App() {
       </div>
 
       <div className={`${darkMode ? 'dark_footer' : "footer"}`}>
-        Created with ❤️ by <a href='https://mursalfk.github.io/' target='_blank' rel='noopener noreferrer'>Mursal Furqan</a>
+        Created with ❤️ by <a href={portfolio} target='_blank' rel='noopener noreferrer'>Mursal Furqan</a>
       </div>
 
       <ToastContainer
