@@ -376,15 +376,25 @@ body {
     text-align: center;
 }
 
-.dark_darkModeCheck {
-    // Position the checkbox at top right corner
+.topRightButtons {
+    display: flex;
+
     position: absolute;
     top: 0;
     right: 0;
     margin: 10px;
+}
+
+.dark_darkModeCheck {
+    // Position the checkbox at top right corner
+    margin: 10px;
+
     cursor: pointer;
-    color: $primary-color;
+    color: $secondary-color;
     // Style the checkbox
+    label {
+        cursor: pointer;
+    }
     input {
         position: absolute;
         opacity: 0;
@@ -392,34 +402,36 @@ body {
         height: 0;
         width: 0;
     }
+    width: fit-content;
     // Add Borders
-    border: 1px solid $primary-color;
+    border: 1px solid $secondary-color;
     border-radius: 5px;
     padding: 2px 4px;
     // Add a background color
-    background-color: $secondary-color;
+    background-color: $primary-color;
     // Transition
     transition: all 0.5s ease;
     // Effect on hover
     &:hover {
-        background-color: $primary-color;
-        color: $secondary-color;
+        color: $primary-color;
+        background-color: $secondary-color;
+        border: 1px solid $primary-color;
     }
 }
 
 .darkModeCheck {
+    label {
+        cursor: pointer;
+    }
     input {
         position: absolute;
         opacity: 0;
-        cursor: pointer;
+        cursor: inherit;
         height: 0;
         width: 0;
     }
-    // Position the checkbox at top right corner
-    position: absolute;
-    color: $primary-color;
-    top: 0;
-    right: 0;
+    width: fit-content;
+    color: $secondary-color;
     margin: 10px;
     cursor: pointer;
     // Add Borders
@@ -427,12 +439,90 @@ body {
     border-radius: 5px;
     padding: 2px 4px;
     // Add a background color
-    background-color: $secondary-color;
+    background-color: $primary-color;
     // Transition
     transition: all 0.5s ease;
     // Effect on hover
     &:hover {
-        background-color: $primary-color;
-        color: $secondary-color;
+        color: $primary-color;
+        background-color: $secondary-color;
+    }
+}
+
+// Disabled button
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.checkboxSelected {
+    label {
+        cursor: pointer;
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: inherit;
+        height: 0;
+        width: 0;
+    }
+    width: fit-content;
+    color: $secondary-color;
+    margin: 10px;
+    cursor: pointer;
+    // Add Borders
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    padding: 2px 4px;
+    // Add a background color
+    background-color: $primary-color;
+    // Transition
+    transition: all 0.5s ease;
+    // Effect on hover
+    &:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
+    }
+    color: $primary-color;
+    background-color: $secondary-color;
+    &:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
+    }
+}
+
+.dark_checkboxSelected {
+    label {
+        cursor: pointer;
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: inherit;
+        height: 0;
+        width: 0;
+    }
+    width: fit-content;
+    color: $secondary-color;
+    margin: 10px;
+    cursor: pointer;
+    // Add Borders
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    padding: 2px 4px;
+    // Add a background color
+    background-color: $primary-color;
+    // Transition
+    transition: all 0.5s ease;
+    // Effect on hover
+    &:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
+    }
+    color: $primary-color;
+    background-color: $secondary-color;
+    &:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
     }
 }

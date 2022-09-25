@@ -14,6 +14,7 @@ function App() {
   const [randomGradient_state, setRandomGradient] = useState('N/A');
 
   const [darkMode, setDarkMode] = useState(false);
+  const [predefinedGradient, setPredefinedGradient] = useState(false);
 
   useEffect(() => {
   }, []);
@@ -21,6 +22,10 @@ function App() {
   const darkModeChange = () => {
     document.body.classList.toggle('dark_body');
     setDarkMode(!darkMode);
+  };
+
+  const predefinedGradientChange = () => {
+    setPredefinedGradient(!predefinedGradient);
   };
 
   const shuffleFunc = () => {
@@ -68,17 +73,34 @@ function App() {
   }
   return (
     <>
-      <div className={`${darkMode ? 'dark_darkModeCheck' : "darkModeCheck"}`}>
-        <input type="checkbox" onChange={() => darkModeChange()} id="darkMode" name="darkMode" value={darkMode} />
-        <label htmlFor="darkMode">Dark Mode</label>
+      <div className='topRightButtons'>
+
+        <div className={`${darkMode ? 'dark_darkModeCheck' : "darkModeCheck"}`}>
+          <input type="checkbox" onChange={() => darkModeChange()} id="darkMode" name="darkMode" value={darkMode} />
+          <label htmlFor="darkMode">Dark Mode</label>
+        </div>
+
+        <div className={`${darkMode && predefinedGradient ? 'dark_checkboxSelected' : "checkboxSelected"}`}>
+          <input type="checkbox" onChange={() => predefinedGradientChange()} id="predefinedGradient" name="predefinedGradient" value={predefinedGradient} />
+          <label htmlFor="predefinedGradient">Pre-defined Gradients</label>
+        </div>
       </div>
 
       <div className={`${darkMode ? 'dark_color_cabin' : "color_cabin"}`}>
         <p className='colorTitle'>Generate Random Gradient</p>
-        <p className='init_instruction0'>
-          Click the button below to create random gradient
-          <br />⏬🔽⬇️👇👇👇⬇️🔽⏬
-        </p>
+        {!predefinedGradient ?
+          <p className='init_instruction0'>
+            Click the button below to create random gradient
+            <br />⏬🔽⬇️👇👇👇⬇️🔽⏬
+          </p>
+          :
+          <>
+            <p className='init_instruction0'>
+              Select from the below given gradients
+              <br />⏬🔽⬇️👇👇👇⬇️🔽⏬
+            </p>
+          </>
+        }
       </div>
 
       <div className={`${darkMode ? 'dark_random_values' : "random_values"}`}>
@@ -123,12 +145,26 @@ function App() {
         </table>
 
       </div>
-      <button
-        onClick={() => { shuffleFunc() }}
-        className={`${darkMode ? 'dark_shuffle_button' : "shuffle_button"}`}
-      >
-        Generate New Gradient
-      </button>
+      <div>
+        {predefinedGradient ?
+          <>
+          </>
+          :
+          <>
+            <button
+              disabled={predefinedGradient}
+              onClick={() => { shuffleFunc() }}
+              className={
+
+                ` ${predefinedGradient ? 'disabled' : ""} ${darkMode ? 'dark_shuffle_button' : "shuffle_button"}`
+              }
+            >
+              Generate New Gradient
+            </button>
+
+          </>
+        }
+      </div>
 
       <div className={`${darkMode ? 'dark_footer' : "footer"}`}>
         Created with ❤️ by <a href={portfolio} target='_blank' rel='noopener noreferrer'>Mursal Furqan</a>

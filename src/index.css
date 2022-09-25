@@ -387,19 +387,33 @@ body {
   text-align: center;
 }
 
-.dark_darkModeCheck {
+.topRightButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   top: 0;
   right: 0;
   margin: 10px;
+}
+
+.dark_darkModeCheck {
+  margin: 10px;
   cursor: pointer;
-  color: #d9d7e1;
-  border: 1px solid #d9d7e1;
+  color: #1a1a1a;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid #1a1a1a;
   border-radius: 5px;
   padding: 2px 4px;
-  background-color: #1a1a1a;
+  background-color: #d9d7e1;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.dark_darkModeCheck label {
+  cursor: pointer;
 }
 
 .dark_darkModeCheck input {
@@ -411,35 +425,123 @@ body {
 }
 
 .dark_darkModeCheck:hover {
-  background-color: #d9d7e1;
-  color: #1a1a1a;
+  color: #d9d7e1;
+  background-color: #1a1a1a;
+  border: 1px solid #d9d7e1;
 }
 
 .darkModeCheck {
-  position: absolute;
-  color: #d9d7e1;
-  top: 0;
-  right: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #1a1a1a;
   margin: 10px;
   cursor: pointer;
   border: 1px solid #1a1a1a;
   border-radius: 5px;
   padding: 2px 4px;
-  background-color: #1a1a1a;
+  background-color: #d9d7e1;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.darkModeCheck label {
+  cursor: pointer;
 }
 
 .darkModeCheck input {
   position: absolute;
   opacity: 0;
-  cursor: pointer;
+  cursor: inherit;
   height: 0;
   width: 0;
 }
 
 .darkModeCheck:hover {
-  background-color: #d9d7e1;
+  color: #d9d7e1;
+  background-color: #1a1a1a;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.checkboxSelected {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #1a1a1a;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+  padding: 2px 4px;
+  background-color: #d9d7e1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: #d9d7e1;
+  background-color: #1a1a1a;
+}
+
+.checkboxSelected label {
+  cursor: pointer;
+}
+
+.checkboxSelected input {
+  position: absolute;
+  opacity: 0;
+  cursor: inherit;
+  height: 0;
+  width: 0;
+}
+
+.checkboxSelected:hover {
+  color: #d9d7e1;
+  background-color: #1a1a1a;
+}
+
+.checkboxSelected:hover {
+  color: #d9d7e1;
+  background-color: #1a1a1a;
+}
+
+.dark_checkboxSelected {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #1a1a1a;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+  padding: 2px 4px;
+  background-color: #d9d7e1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: #d9d7e1;
+  background-color: #1a1a1a;
+}
+
+.dark_checkboxSelected label {
+  cursor: pointer;
+}
+
+.dark_checkboxSelected input {
+  position: absolute;
+  opacity: 0;
+  cursor: inherit;
+  height: 0;
+  width: 0;
+}
+
+.dark_checkboxSelected:hover {
+  color: #d9d7e1;
+  background-color: #1a1a1a;
+}
+
+.dark_checkboxSelected:hover {
+  color: #d9d7e1;
+  background-color: #1a1a1a;
 }
 /*# sourceMappingURL=index.css.map */
