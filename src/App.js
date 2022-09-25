@@ -69,6 +69,10 @@ function App() {
   }
   return (
     <>
+      <div className={`${darkMode ? 'dark_darkModeCheck' : "darkModeCheck"}`}>
+        <input type="checkbox" onChange={() => darkModeChange()} id="darkMode" name="darkMode" value={darkMode} />
+        <label htmlFor="darkMode">Dark Mode</label>
+      </div>
 
       <div className={`${darkMode ? 'dark_color_cabin' : "color_cabin"}`}>
         <p className='colorTitle'>Generate Random Gradient</p>
@@ -126,11 +130,6 @@ function App() {
       >
         Generate New Gradient
       </button>
-
-      <div className={`${darkMode ? 'dark_darkModeCheck' : "darkModeCheck"}`}>
-        <input type="checkbox" onChange={() => darkModeChange()} id="darkMode" name="darkMode" value={darkMode} />
-        <label htmlFor="darkMode">Dark Mode</label>
-      </div>
 
       <div className={`${darkMode ? 'dark_footer' : "footer"}`}>
         Created with ❤️ by <a href={portfolio} target='_blank' rel='noopener noreferrer'>Mursal Furqan</a>
