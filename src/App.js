@@ -113,6 +113,11 @@ function App() {
         Generate New Gradient
       </button>
 
+      <div className='darkModeCheck'>
+        <input type="checkbox" id="darkMode" name="darkMode" value="darkMode" />
+        <label htmlFor="darkMode">Dark Mode</label>
+      </div>
+
       <div className='footer'>
         Created with ❤️ by <a href='https://mursalfk.github.io/' target='_blank' rel='noopener noreferrer'>Mursal Furqan</a>
       </div>

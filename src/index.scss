@@ -196,3 +196,12 @@ body{
     text-align: center;
     cursor: pointer;
 }
+
+.darkModeCheck{
+    // Position the checkbox at top right corner
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    cursor: pointer;
+}
