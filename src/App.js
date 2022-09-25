@@ -13,23 +13,14 @@ function App() {
   const [randomGradient_state, setRandomGradient] = useState('N/A');
 
   const shuffleFunc = () => {
-    // Get element with classNam color_cabin
     const color_cabin = document.querySelector('.color_cabin');
-    // Gnerate Random Hex Color
     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    // Generate Random second hex color
     const randomColor2 = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    // Generate Rnadom Gradient Types
     const gradientType = Math.random() < 0.5 ? 'linear-gradient' : 'radial-gradient';
-    // Generate Random Gradient Direction
     const gradientDirection = Math.random() < 0.5 ? 'right' : 'left';
-    // Generate Random Gradient Position
     const gradientPosition = Math.random() < 0.5 ? 'top' : 'bottom';
-    // Random Gradient to be applied
     const randomGradient_radial = gradientType + '(' + randomColor + ', ' + randomColor2 + ')';
-    // Generate Linear Gradients with position, direction and colors
     const randomGradient = gradientType + '( to ' + gradientPosition + ' ' + gradientDirection + ', ' + randomColor + ', ' + randomColor2 + ')';
-    // Apply Random Gradient to body
     gradientType === 'linear-gradient' ? color_cabin.style.background = randomGradient : color_cabin.style.background = randomGradient_radial;
 
     setRandomColor(randomColor.toLocaleUpperCase());
@@ -39,18 +30,14 @@ function App() {
     gradientPosition === 'top' ? setGradientPosition('Top') : setGradientPosition('Bottom');
     gradientType === 'linear-gradient' ? setRandomGradient(randomGradient) : setRandomGradient(randomGradient_radial);
 
-    // Set box-shadow of color-cabin
     color_cabin.style.boxShadow = '0 0 10px 0 #000'
 
-    // Opacity of colorTitle
     const colorTitle = document.querySelector('.colorTitle');
     colorTitle.style.opacity = '1';
 
     const init_instruction0 = document.querySelector('.init_instruction0');
     init_instruction0.style.opacity = '0';
 
-    // const init_instruction1 = document.querySelector('.init_instruction1');
-    // init_instruction1.style.opacity = '0';
   }
   const notify = (param) => toast.info(param + ' copied to Clipboard', {
     position: "bottom-left",
@@ -77,7 +64,6 @@ function App() {
         </p>
       </div>
 
-      {/* Area to show the random values */}
       <div className="random_values">
         <table>
           <thead>
