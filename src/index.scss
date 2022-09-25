@@ -51,12 +51,11 @@ body {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    color: $primary-color;
     cursor: pointer;
     transition: all 0.5s ease;
 
     &:hover {
-        background: $primary-color;
+        background: $secondary-color;
         border-top: 1px solid $primary-color;
         color: $primary-color;
     }
@@ -64,7 +63,7 @@ body {
     &:active {
         border-top: 1px solid $primary-color;
         background: $primary-color;
-        color: $primary-color;
+        color: $secondary-color;
     }
 }
 
@@ -263,7 +262,7 @@ body {
     height: 50px;
     text-align: left;
     font-size: 15px;
-    color: $primary-color;
+    color: $secondary-color;
     cursor: pointer;
 
     tr {
@@ -301,7 +300,7 @@ body {
     .clickToCopy {
         font-family: emoji;
         font-size: 15px;
-        color: $primary-color;
+        color: $secondary-color;
         text-align: center;
         cursor: pointer;
     }
