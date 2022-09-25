@@ -3,6 +3,13 @@ body {
   font-family: emoji;
 }
 
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .dark_body {
   background-color: #1a1a1a;
   color: #d9d7e1;

@@ -3,9 +3,15 @@ $primary-color: #d9d7e1;
 $secondary-color: #1a1a1a;
 $tertiary-color: #f5f5f5;
 $shadow_color: rgba(0, 0, 0, 0.351);
+
 body {
     background-color: $primary-color;
     font-family: emoji;
+}
+
+// Restrict from copying text
+* {
+    user-select: none;
 }
 
 .dark_body {
