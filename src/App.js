@@ -16,8 +16,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    console.log('darkMode', darkMode);
-  }, [darkMode]);
+  }, []);
 
   const darkModeChange = () => {
     document.body.classList.toggle('dark_body');
