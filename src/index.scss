@@ -373,9 +373,24 @@ body {
     margin: 10px;
     cursor: pointer;
     color: #fff;
+    // Style the checkbox
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
 }
 
 .darkModeCheck {
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
     // Position the checkbox at top right corner
     position: absolute;
     color: #464646;
