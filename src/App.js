@@ -1,5 +1,5 @@
 // Import UseState Hook
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
@@ -12,8 +12,21 @@ function App() {
   const [gradientPosition_state, setGradientPosition] = useState('N/A');
   const [randomGradient_state, setRandomGradient] = useState('N/A');
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    console.log('darkMode', darkMode);
+  }, [darkMode]);
+
+  const darkModeChange = () => {
+    document.body.classList.toggle('dark_body');
+    setDarkMode(!darkMode);
+  };
+
   const shuffleFunc = () => {
-    const color_cabin = document.querySelector('.color_cabin');
+    var color_cabin_name = ''
+    darkMode ? color_cabin_name = '.dark_color_cabin' : color_cabin_name = '.color_cabin'
+    const color_cabin = document.querySelector(color_cabin_name);
     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
     const randomColor2 = '#' + Math.floor(Math.random() * 16777215).toString(16);
     const gradientType = Math.random() < 0.5 ? 'linear-gradient' : 'radial-gradient';
@@ -56,7 +69,7 @@ function App() {
   return (
     <>
 
-      <div className="color_cabin">
+      <div className={`${darkMode ? 'dark_color_cabin' : "color_cabin"}`}>
         <p className='colorTitle'>Generate Random Gradient</p>
         <p className='init_instruction0'>
           Click the button below to create random gradient
@@ -64,7 +77,7 @@ function App() {
         </p>
       </div>
 
-      <div className="random_values">
+      <div className={`${darkMode ? 'dark_random_values' : "random_values"}`}>
         <table>
           <thead>
             <tr>
@@ -108,17 +121,17 @@ function App() {
       </div>
       <button
         onClick={() => { shuffleFunc() }}
-        className="shuffle_button"
+        className={`${darkMode ? 'dark_shuffle_button' : "shuffle_button"}`}
       >
         Generate New Gradient
       </button>
 
-      <div className='darkModeCheck'>
-        <input type="checkbox" id="darkMode" name="darkMode" value="darkMode" />
+      <div className={`${darkMode ? 'dark_darkModeCheck' : "darkModeCheck"}`}>
+        <input type="checkbox" onChange={() => darkModeChange()} id="darkMode" name="darkMode" value={darkMode} />
         <label htmlFor="darkMode">Dark Mode</label>
       </div>
 
-      <div className='footer'>
+      <div className={`${darkMode ? 'dark_footer' : "footer"}`}>
         Created with ❤️ by <a href='https://mursalfk.github.io/' target='_blank' rel='noopener noreferrer'>Mursal Furqan</a>
       </div>
 
